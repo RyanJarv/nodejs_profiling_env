@@ -2,6 +2,13 @@
 
 Add `vagrant/settings.json` (example at `vagrant/settings.json.example`)
 
+Dependencies:
+  * Vagrant (https://www.vagrantup.com/)
+  * jq (`brew install jq`)
+
+Start VM:
+  `vagrant up`
+
 Setup repos:
   ` ./scripts/setup.sh`
 
