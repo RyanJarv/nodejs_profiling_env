@@ -12,3 +12,6 @@ Start perf:
   ` ./scripts/start_perf.sh`
 
 start_perf.sh will output a SVG that you can open in your web browser.
+
+## FlameGraph example
+![Trace](./docs/images/nodejs_flamegraph_example.svg)
