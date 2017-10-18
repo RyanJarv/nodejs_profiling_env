@@ -1,0 +1,7 @@
+**.swp
+.vagrant
+vagrant/FlameGraph
+vagrant/io
+vagrant/ember
+vagrant/tmp
+nohup.out

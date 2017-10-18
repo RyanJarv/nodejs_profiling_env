@@ -2,8 +2,6 @@
 
 set -euo pipefail
 
-cd "$( dirname "${BASH_SOURCE[0]}" )/../"
-
 TMPDIR="./tmp/flamegraph"
 BASEDIR="$(pwd)"
 
@@ -15,7 +13,6 @@ pushd "${TMPDIR}"
 sleep=10
 while :; do
 	perf record -F 99 -a -g -- sleep "${sleep}"
-	sleep=60
 	perf script -f > "./out.perf"
 
 
@@ -24,6 +21,8 @@ while :; do
 	unlink out.current.svg ||:
 	ln -s out.$(date '+%s').svg out.current.svg
 	find . -mmin +10 -name 'out.*.svg'
+
+	sleep=60
 done
 
 popd
