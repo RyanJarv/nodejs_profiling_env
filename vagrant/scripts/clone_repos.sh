@@ -4,10 +4,10 @@ set -euo pipefail
 
 pushd vagrant
 
-git clone https://github.com/brendangregg/FlameGraph.git
-
 for repo in $(jq -r '.repos|keys|.[]' settings.json); do
-    jq -r ".repos.${repo}.url" settings.json "${repo}"
+    git clone $(jq -r ".repos.${repo}.url" settings.json) "${repo}"
 done
+
+git clone https://github.com/brendangregg/FlameGraph.git
 
 popd
