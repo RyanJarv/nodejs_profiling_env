@@ -12,7 +12,7 @@ pushd "${TMPDIR}"
 
 sleep=10
 while :; do
-	perf record -F 99 -a -g -- sleep "${sleep}"
+	perf record -F 99 -a -g -p "$(pgrep -f /usr/bin/node)" -- sleep "${sleep}"
 	perf script -f > "./out.perf"
 
 
