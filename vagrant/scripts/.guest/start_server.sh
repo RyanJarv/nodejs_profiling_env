@@ -2,8 +2,10 @@
 
 set -euo pipefail
 
-pushd io/
+SETTINGS="$(pwd)/settings.json"
 
-node --perf_basic_prof server.js
+pushd "$(jq -r '.run.dir' $SETTINGS)"
+
+bash -c "$(jq -r '.run.cmd' $SETTINGS)"
 
 popd

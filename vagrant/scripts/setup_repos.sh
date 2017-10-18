@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-vagrant ssh --command "cd /vagrant; ./scripts/.guest/setup_repos.sh"
+vagrant ssh --command "cd /vagrant; bash ./scripts/.guest/setup_repos.sh"

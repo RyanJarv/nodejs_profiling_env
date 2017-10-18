@@ -1,0 +1,16 @@
+{
+    "repos": {
+        "<repo1>": {
+            "url": "<repo1 url>",
+            "setup": ["npm i"]
+        },
+        "<repo2>": {
+            "url": "<repo2 url>",
+            "setup": ["npm i"]
+        }
+    },
+    "run": {
+        "dir": "<repo1>",
+        "cmd": "node --perf_basic_prof server.js"
+    }
+}

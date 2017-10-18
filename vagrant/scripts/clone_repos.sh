@@ -4,8 +4,10 @@ set -euo pipefail
 
 pushd vagrant
 
-git clone ssh://git@stash.curse.us:2222/co/ember.git
-git clone ssh://git@stash.curse.us:2222/co/io.git
 git clone https://github.com/brendangregg/FlameGraph.git
+
+for repo in $(jq -r '.repos|keys|.[]' settings.json); do
+    jq -r ".repos.${repo}.url" settings.json "${repo}"
+done
 
 popd
